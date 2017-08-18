@@ -17,11 +17,11 @@ import java.io.OutputStream;
 import java.io.FileOutputStream;
 import java.util.Properties;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import static melektro.Email.EMailSender;
 import melektro.LogsFormatter;
+import static melektro.LogsFormatter.Log;
 import static melektro.PublicIPAddress.GetPublicIp;
-import static melektro.PublicIPAddress.Log;
-import static melektro.PublicIPAddress.SetLogger;
 
 public class pip {
 
@@ -237,7 +237,7 @@ public class pip {
     }
     
     public static void main(String[] args) throws Exception {
-        SetLogger(new LogsFormatter().setLogging(Level.ALL));
+        new LogsFormatter().setLogging(Level.ALL);
         //Log("Initialising ...");
         GetProperties();
         CompareIp(false);
